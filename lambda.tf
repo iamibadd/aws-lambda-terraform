@@ -26,6 +26,7 @@ resource "aws_lambda_function" "hello_world" {
   source_code_hash = data.archive_file.hello_world_source.output_base64sha256
   role             = aws_iam_role.lambda_role.arn
   layers           = [aws_lambda_layer_version.layers.arn]
+  timeout          = 900
 }
 
 # Defines a log group to store log messages from your Lambda function for 30 days.
@@ -44,6 +45,7 @@ resource "aws_lambda_function" "trigger" {
   source_code_hash = data.archive_file.trigger_source.output_base64sha256
   role             = aws_iam_role.lambda_role.arn
   layers           = [aws_lambda_layer_version.layers.arn]
+  timeout          = 900
 }
 
 resource "aws_cloudwatch_log_group" "trigger_logs" {

@@ -11,6 +11,7 @@ data "aws_iam_policy_document" "hello_world_sqs_policy_document" {
     sid     = "SQSPolicyDocumentId"
     actions = [
       "sqs:ReceiveMessage",
+      "sqs:SendMessage",
       "sqs:DeleteMessage",
       "sqs:GetQueueAttributes"
     ]
