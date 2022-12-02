@@ -43,3 +43,7 @@ terraform.rc
 
 # lambda zip files
 *.zip
+
+# Environment varibales
+**.env
+.idea
