@@ -3,6 +3,7 @@ resource "aws_sqs_queue" "hello_world_queue" {
   name                        = var.hello_world_function_sqs
   fifo_queue                  = true
   content_based_deduplication = true
+  visibility_timeout_seconds  = 900
 }
 
 # SQS Policy Document, for SQS no role is required. In this case, we define policies in IAM Policy.

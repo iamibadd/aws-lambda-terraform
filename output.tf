@@ -20,3 +20,8 @@ output "sqs_queue" {
   description = "Url of the SQS queue."
   value       = aws_sqs_queue.hello_world_queue.url
 }
+
+output "hello_world_sqs_event_mapping" {
+  description = "Uuid of event source mapping of HelloWorld lambda function and SQS queue."
+  value       = aws_lambda_event_source_mapping.hello_world_sqs_mapping.uuid
+}

@@ -6,4 +6,6 @@ export AWS_REGION=""
 terraform init
 terraform plan
 terraform apply -auto-approve
-#terraform destroy -auto-approve
+# terraform destroy -auto-approve
+# deleting an event source mapping manually if not deleted by terraform destroy, run this command in AWS shell.
+# aws lambda delete-event-source-mapping --uuid {event-source-mapping-id} --region {aws-region}
